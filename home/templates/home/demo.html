@@ -1,0 +1,46 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title%}Demo{% endblock %}
+
+{%block extra_css%}
+    <link rel="stylesheet" href="{% static "home/css/demo.css" %}">
+{% endblock %}
+
+{% block body %}
+<div id="container">
+    <h1>Drag and Drop an Image</h1>
+
+    <form method="post" action="{% url 'demo' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Tải lên</button>
+    </form>
+
+     <div id="drop-zone">
+        DROP HERE
+    </div> 
+        
+    <div id="image-display">
+        {% if uploaded_image_url %}
+            <img src="{{ uploaded_image_url }}" alt="Uploaded Image" style="height: 400px; width: 400px;">
+        {% else %}
+            <p>Ảnh của bạn sẽ xuất hiện ở đây..</p>
+        {% endif %}
+    </div>
+        
+    <div id="prediction-result">
+        {% if result %}
+            <p>Kết quả dự đoán: {{ result }}</p>
+        {% else %}
+            <p>Kết quả dự đoán sẽ xuất hiện ở đây..</p>
+        {% endif %}
+    </div>
+    
+    </div>
+
+{% endblock body %}
+
+{% block extra_js %}
+    <script src="{% static "home/js/demo.js" %}"></script>
+{% endblock %}

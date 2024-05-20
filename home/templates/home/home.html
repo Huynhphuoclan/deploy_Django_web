@@ -1,0 +1,28 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title%}Homepage{% endblock %}
+
+{% block body %}
+<div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Ý tưởng đồ án</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="https://vietnamnet.vn/tai-dien-xe-hop-dong-chay-qua-toc-do-nghin-lan-thang-vi-sao-kho-xu-ly-2280017.html" class="btn btn-primary">Bài báo tiêu biểu</a>
+    </div>
+  </div>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Ý tưởng đồ án</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      {% comment %} <a href="#" class="card-link">Card link</a> {% endcomment %}
+      {% comment %} <a href="#" class="card-link">Another link</a> {% endcomment %}
+    </div>
+  </div>
+{% endblock body %}
+
